@@ -25,6 +25,28 @@ export default class ToneCSSUtils {
     }
   }
 
+  getColors(namespace: string) {
+    return {
+      lighter: document
+        .querySelector('html')
+        ?.style.getPropertyValue('--' + namespace + '-lighter'),
+      darker: document
+        .querySelector('html')
+        ?.style.getPropertyValue('--' + namespace + '-darker'),
+    }
+  }
+
+  getColorArray(namespace: string) {
+    return [
+      document
+        .querySelector('html')
+        ?.style.getPropertyValue('--' + namespace + '-darker'),
+      document
+        .querySelector('html')
+        ?.style.getPropertyValue('--' + namespace + '-lighter'),
+    ]
+  }
+
   static hexToRgb(hex: string) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
     return result
