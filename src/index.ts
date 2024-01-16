@@ -25,7 +25,7 @@ export default class ToneCSSUtils {
     }
   }
 
-  getColors(namespace: string) {
+  static getColors(namespace: string) {
     return {
       lighter: document
         .querySelector('html')
@@ -36,7 +36,7 @@ export default class ToneCSSUtils {
     }
   }
 
-  getColorArray(namespace: string) {
+  static getColorArray(namespace: string) {
     return [
       document
         .querySelector('html')
